@@ -10,9 +10,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.routers import ROUTERS
+from app.services.assess import AssessService
 from app.store import store
 
 app = FastAPI(title="市政道路桥梁养护平台", version="1.0.0")
+
+assess_service = AssessService()
 
 app.add_middleware(
     CORSMiddleware,
@@ -34,5 +37,7 @@ def health() -> dict[str, object]:
 
 @app.get("/api/overview")
 def overview() -> dict[str, object]:
-    """运营概览：把各业务模块的待处理量汇总成看板卡片。"""
-    return store.overview()
+    """运营概览：把各业务模块的待处理量汇总成看板卡片，并附技术评定等级一览。"""
+    payload = store.overview()
+    payload["assess_grades"] = assess_service.grade_summary()
+    return payload

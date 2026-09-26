@@ -33,3 +33,17 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+.ok-text { color: #067647; }
+.muted-text { color: var(--muted); font-size: 12px; }
+.drawer-mask { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.35); display: flex; justify-content: flex-end; z-index: 20; }
+.drawer { width: 520px; max-width: 92vw; background: #fff; height: 100%; overflow-y: auto; padding: 16px 20px; box-shadow: -4px 0 16px rgba(15, 23, 42, 0.12); }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.drawer-head h3 { margin: 0; font-size: 15px; }
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin: 0 0 16px; }
+.detail-item dt { font-size: 12px; color: var(--muted); }
+.detail-item dd { margin: 2px 0 0; font-size: 13px; }
+.grade-form { border-top: 1px solid var(--border); padding-top: 12px; margin-bottom: 16px; }
+.grade-form h4, .history-block h4 { margin: 0 0 10px; font-size: 14px; }
+.grade-form .filter-item { display: block; margin-bottom: 10px; }
+.grade-form input, .grade-form textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font-size: 13px; font-family: inherit; }
+.drawer-actions { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
